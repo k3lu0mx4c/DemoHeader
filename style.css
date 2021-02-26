@@ -1,0 +1,112 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+header{
+    display: flex;
+    background-color:#24252a;
+    padding: 30px 10%;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav__links{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+.nav__links li{
+    /* flex-direction: row; */
+    margin: 0px 20px;
+    /* padding-left: 40px; */
+    /* padding: 20px 20px; */
+}
+.nav__links li a{
+    text-decoration: none;
+    font-size: 20px;
+    color:white;
+    transition: color 0.3s ease 0s;
+    font-weight: 700;
+}
+
+.nav__links li a:hover{
+    color:#0088a9;
+}
+.cta{
+    border-radius: 30px;
+    background-color: rgba(0, 136, 169, 1);
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0 15px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3 ease 0s;
+}
+.cta:hover{
+    background-color: rgba(0, 136, 169, 0.8);
+}
+.menu{
+    display: none;
+}
+/* Mobile nav  */
+.overlay{
+    width: 0;
+    height: 100%;
+    overflow-x: hidden;
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: 1;
+    background-color: #24252a;
+    display: flex;
+    transition: width 0.5s ease 0s;
+}
+.overlay__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0 auto;
+    /* text-decoration: none; */
+    /* text-align: center; */
+}
+.overlay__content li{
+    list-style-type: none;
+}
+.overlay__content li a{
+    font-size: 40px;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease 0s;
+}
+.overlay__content li a:hover{
+    color: #0088a9;
+}
+.overlay--active{
+    width: 100%;
+}
+.close{
+    font-size: 70px;
+    position: absolute;
+    top: 0;
+    right: 32px;
+    color: white;
+}
+@media screen and (max-height:450px){
+    .overlay__content li a{
+        font-size: 20px;
+    }
+    .close{
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 800px){
+    .nav__links,
+    .cta{
+        display: none;
+    }
+    .menu{
+        display: initial;
+    }
+}
